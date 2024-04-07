@@ -1,5 +1,5 @@
 import {Request, Response } from "express";
-import { User } from "../models/user";
+import User from "../models/user";
 
 
 const getCurrentUser= async(req:Request, res: Response) =>{
@@ -59,8 +59,7 @@ const updateCurrentUser= async(req: Request, res: Response) =>{
 
         await user.save();
 
-        res
-        .send(user)
+        res.send(user);
         
 
     } catch (error) {
