@@ -30,7 +30,7 @@ export const jwtParse= async(req:Request, res:    Response, next: NextFunction) 
 
   try {
     const decoded= jwt.decode(token) as jwt.JwtPayload;
-    const auth0Id= decoded.sub;
+    const auth0Id= decoded.sub; 
 
     const user= await User.findOne({auth0Id});
 

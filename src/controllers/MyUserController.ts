@@ -26,7 +26,9 @@ try {
     const existingUser = await User.findOne({auth0Id});
 
     if(existingUser){
-        return res.status(200).send();
+        console.log(existingUser);
+        
+        return res.status(200).send(existingUser);
     }
 
     const newUser= new User(req.body);
@@ -64,8 +66,7 @@ const updateCurrentUser= async(req: Request, res: Response) =>{
 
     } catch (error) {
         console.log(error);
-        res.status(500).json({message: "Error updating user"});
-        
+        res.status(500).json({message: "Error updating user"});  
     }
 }
 
