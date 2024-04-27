@@ -15,7 +15,7 @@ const getCurrentUser= async(req:Request, res: Response) =>{
         console.log(error);
         return res.status(500).json({message: "Something went wrong"});
     }
-}
+};
 
 const createCurrentUser= async(req: Request, res: Response) =>{
 // 1. check if user exists
@@ -26,9 +26,9 @@ try {
     const existingUser = await User.findOne({auth0Id});
 
     if(existingUser){
-        console.log(existingUser);
+        // console.log(existingUser);
         
-        return res.status(200).send(existingUser);
+        return res.status(200).send();
     }
 
     const newUser= new User(req.body);
@@ -36,7 +36,7 @@ try {
 
     res
     .status(201)
-    .json(newUser.toObject())
+    .json(newUser.toObject());
 
 } catch (error) {
     console.log(error);
@@ -68,7 +68,7 @@ const updateCurrentUser= async(req: Request, res: Response) =>{
         console.log(error);
         res.status(500).json({message: "Error updating user"});  
     }
-}
+};
 
 export default {
     createCurrentUser,

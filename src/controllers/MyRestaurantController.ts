@@ -29,7 +29,7 @@ const createMyRestaurant= async(req:Request, res: Response) =>{
         if(existingRestaurant){
             return res
             .status(409)
-            .json({message: "User restaurant already exist"});
+            .json({message: "User restaurant already exists"});
         }
 
         // Check if image file is uploaded
@@ -51,14 +51,14 @@ const createMyRestaurant= async(req:Request, res: Response) =>{
         console.log("Error creating restaurant", error);
         res.status(500).json({message: "Failed to create restaurant"});
         
-    };
+    }
 };
 
 const updateMyRestaurant= async(req:Request, res: Response)=>{
     try {
         const restaurant= await Restaurant.findOne({
             user: req.userId,
-        })
+        });
 
         if(!restaurant){
             return res
