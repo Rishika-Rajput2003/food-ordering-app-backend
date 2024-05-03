@@ -40,7 +40,7 @@ try {
 
 } catch (error) {
     console.log(error);
-    res.status(500).json({message:" error creating user"});
+    res.status(500).json({message:" Error creating user"});
     
 }
 };

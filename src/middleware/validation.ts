@@ -1,5 +1,5 @@
-import { Request, Response, NextFunction } from "express"
-import { body, validationResult } from "express-validator"
+import { Request, Response, NextFunction } from "express";
+import { body, validationResult } from "express-validator";
 
 const handleValidationErrors= async(
     req: Request,
@@ -17,22 +17,22 @@ export const validateMyUserRequest= [
     body("name")
     .isString()
     .notEmpty()
-    .withMessage("name must be a string"),
+    .withMessage("Name must be a string"),
 
     body("addressLine1")
     .isString()
     .notEmpty()
-    .withMessage("addressLine1 must be a string"),
+    .withMessage("AddressLine1 must be a string"),
 
     body("city")
     .isString()
     .notEmpty()
-    .withMessage("city must be a string"),
+    .withMessage("City must be a string"),
 
     body("country")
     .isString()
     .notEmpty()
-    .withMessage("country must be a string"),
+    .withMessage("Country must be a string"),
 
     handleValidationErrors,
     

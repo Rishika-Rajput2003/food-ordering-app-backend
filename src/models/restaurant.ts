@@ -1,4 +1,4 @@
-import mongoose, { InferSchemaType, mongo } from "mongoose";
+import mongoose, { InferSchemaType} from "mongoose";
 
 
 const menuItemSchema= new mongoose.Schema({
